@@ -113,10 +113,7 @@ def _setup():
 
 
 def _get_slide(path):
-    path = os.path.abspath(os.path.join(app.basedir, path))
-    if not path.startswith(app.basedir + os.path.sep):
-        # Directory traversal
-        abort(404)
+    path = os.path.abspath(path)
     if not os.path.exists(path):
         abort(404)
     try:
